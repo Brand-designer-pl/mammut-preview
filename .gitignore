@@ -1,0 +1,12 @@
+*
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/style.css
+!/app.js
+!/assets/
+/assets/*
+!/assets/topographic-mountains.png
+!/assets/topographic-ridge.png
+!/assets/avalanche2.png
+!/assets/skitouring.png
