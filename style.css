@@ -74,3 +74,29 @@ nav a:focus-visible::after{transform:scaleX(1)}
 body.motion-off nav a,body.motion-off nav a::after{transition:none}
 body.motion-off nav a:hover{transform:none}
 @media(prefers-reduced-motion:reduce){nav a,nav a::after{transition:none}nav a:hover{transform:none}}
+
+/* SVG arrows remain monochrome on mobile, independent of emoji fonts. */
+.icon-arrow{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.scroll span{display:grid;place-items:center;width:34px;height:34px;padding:0;flex-shrink:0}
+footer>a:last-child{display:inline-flex;align-items:center;gap:8px}
+@media(max-width:700px){
+ p{font-size:15px;line-height:1.8}
+ .lead{font-size:19px}
+ .eyebrow,.hero-caption .eyebrow{font-size:11px!important;letter-spacing:1.1px}
+ .hero-kicker{font-size:10px;letter-spacing:1px}
+ .brand span{font-size:8px;letter-spacing:1.6px}
+ .pill{font-size:12px;min-height:44px}.large{font-size:14px}
+ .hero-caption{bottom:17%}
+ .scroll{font-size:11px;letter-spacing:.7px;line-height:1.5;gap:9px;max-width:55%;min-height:44px;bottom:3%}
+ .motion{font-size:12px;min-height:44px;bottom:3%;right:6%}
+ .label{font-size:10px;letter-spacing:.9px;line-height:1.6;gap:20px}
+ .principles>div{font-size:14px}.principles span{font-size:11px}
+ .text-link{font-size:14px;gap:20px;line-height:1.6;min-height:44px}
+ .text-link span{flex-shrink:0}
+ .kit-grid article>span,.step>span{font-size:11px}
+ .kit-grid p{font-size:14px}
+ .feature-art .image-note,.grip-art .image-note{font-size:10px;letter-spacing:.8px;max-width:72%}
+ footer>span{font-size:10px;line-height:1.7;letter-spacing:.5px}
+ footer>a:last-child{font-size:13px;min-height:44px}
+}
+@media(max-width:360px){.scroll{font-size:10px;letter-spacing:.4px;max-width:53%}.motion{font-size:11px}.kit-grid{grid-template-columns:1fr}}
