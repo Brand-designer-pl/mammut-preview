@@ -100,3 +100,9 @@ footer>a:last-child{display:inline-flex;align-items:center;gap:8px}
  footer>a:last-child{font-size:13px;min-height:44px}
 }
 @media(max-width:360px){.scroll{font-size:10px;letter-spacing:.4px;max-width:53%}.motion{font-size:11px}.kit-grid{grid-template-columns:1fr}}
+
+/* On phones, blend the ski scene vertically rather than along its left edge. */
+@media(max-width:700px){
+ .grip-art{mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.15) 10%,rgba(0,0,0,.65) 25%,#000 38%,#000 65%,transparent 100%);mask-composite:add}
+ .grip-art::after{display:none}
+}
