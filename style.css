@@ -125,3 +125,41 @@ footer>a:last-child{display:inline-flex;align-items:center;gap:8px}
 .closing .brief-columns h3{color:#f5f5f0}
 .brief-manifesto{font-size:clamp(24px,3vw,44px);line-height:1.4;letter-spacing:-1px;margin:75px 0 0}
 @media(max-width:700px){.brief-columns{grid-template-columns:1fr;gap:40px}.brief-section>h2{margin:45px 0 30px}.brief-list li{font-size:15px}.brief-columns h3{font-size:22px}.brief-products{padding-top:35px}.brief-products .feature-art{top:90px}.brief-products .feature-copy{padding-top:390px}.brief-manifesto{margin-top:50px}.inspiration-links .text-link{font-size:14px}}
+
+/* Campaign photography: complete frames, white space, no decorative blur. */
+.campaign-photo{margin:0;background:#e9edf0;overflow:hidden}
+.campaign-photo img{display:block;width:100%;height:auto}
+.js .campaign-photo.reveal{filter:none;transform:translateY(18px)}
+.js .campaign-photo.visible{transform:none}
+.story-visual .campaign-photo{width:82%;max-width:450px;margin-top:52px}
+#story .intro-grid{grid-template-columns:1.15fr 1fr;gap:10%;align-items:center;padding-bottom:0}
+#story .body-copy{max-width:450px}
+#story .body-copy p{font-size:16px;line-height:1.9}
+.photo-interlude{padding:0 6% 80px;max-width:1700px;margin:auto}
+.photo-interlude .campaign-photo{width:100%}
+.editorial-split{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:center;padding-top:65px}
+.editorial-split .pause-copy,.editorial-split .feature-copy{width:100%;max-width:510px;padding:0;position:static}
+.editorial-split>.campaign-photo{width:100%;max-width:490px;justify-self:end}
+.photo-section{position:relative}
+.photo-section .pause-copy h2{font-size:clamp(38px,4.3vw,65px)}
+.directions-split{display:grid;grid-template-columns:1.4fr .8fr;gap:9%;align-items:start}
+.directions-split .campaign-photo{max-width:410px;justify-self:end}
+.inspiration-split{display:grid;grid-template-columns:.85fr 1.15fr;gap:12%;align-items:center}
+.inspiration-split .campaign-photo{max-width:400px}
+.inspiration-split .text-link>span{flex-shrink:1}
+.photo-section.brief-products{min-height:0;padding-top:55px;padding-bottom:90px}
+.photo-section.brief-products .feature-copy{padding:0}
+.products-split{grid-template-columns:1fr 1fr}
+.products-split>.campaign-photo{justify-self:start;max-width:490px}
+@media(max-width:700px){
+ #story .intro-grid,.editorial-split,.directions-split,.inspiration-split{grid-template-columns:1fr;gap:34px}
+ #story .intro-grid{padding-top:45px}
+ .story-visual .campaign-photo{width:100%;max-width:none;margin-top:32px}
+ #story .body-copy p{font-size:15px}
+ .photo-interlude{padding:0 0 35px}
+ .editorial-split{padding-top:40px}
+ .editorial-split>.campaign-photo,.directions-split .campaign-photo,.inspiration-split .campaign-photo{max-width:none;width:100%}
+ .photo-section.brief-products{padding-top:35px;padding-bottom:55px}
+ .products-split .feature-copy{grid-row:1}
+ .photo-section .pause-copy h2{font-size:43px}
+}
