@@ -212,3 +212,6 @@ footer .brand img{filter:brightness(0) invert(1)}
 .motion-off .brand-band-track{transform:none!important;will-change:auto}
 @media(prefers-reduced-motion:reduce){.brand-band-track{transform:none!important;will-change:auto}}
 @media(max-width:700px){.brand-band{padding:26px 0}.brand-band-track{gap:35px}.brand-band img{width:175px;height:38px}.brand-band img.brand-symbol{width:40px;height:40px}}
+
+/* Red hero claim, still layered behind the mountain foreground. */
+.climb{color:var(--accent);text-shadow:none}
