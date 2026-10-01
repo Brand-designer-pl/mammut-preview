@@ -163,3 +163,24 @@ footer>a:last-child{display:inline-flex;align-items:center;gap:8px}
  .products-split .feature-copy{grid-row:1}
  .photo-section .pause-copy h2{font-size:43px}
 }
+
+/* Native scroll-snap video carousel: equal height, entire frame, manual playback. */
+.carousel-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:65px 0 42px}
+.carousel-heading h2{margin:0}
+.carousel-controls{display:flex;gap:10px;flex-shrink:0}
+.carousel-controls button{width:48px;height:48px;border:1px solid #b5bab2;border-radius:50%;background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
+.carousel-controls button:hover:not(:disabled){background:#20251f;color:white}
+.carousel-controls button:disabled{opacity:.3;cursor:default}
+.carousel-controls svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5}
+.video-carousel{display:flex;gap:24px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:0;padding-bottom:24px;scrollbar-width:thin;scrollbar-color:#9fa69a #e7e8e4}
+.video-card{flex:0 0 calc((100% - 72px)/3.25);min-width:0;scroll-snap-align:start}
+.video-card video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#181c19}
+.video-source{padding:19px 0 10px}
+.video-source>span{font-size:11px;letter-spacing:1.4px;color:#6b7269}
+.video-source a{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;line-height:1.6;margin-top:8px;overflow-wrap:anywhere}
+.video-source a:hover{text-decoration:underline;text-underline-offset:4px}
+.video-source svg{flex-shrink:0;width:18px;height:18px}
+.video-carousel:focus-visible,.carousel-controls button:focus-visible,.video-source a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(min-width:1700px){.video-card{flex-basis:calc((100% - 72px)/4)}}
+@media(max-width:1000px){.video-card{flex-basis:calc((100% - 40px)/2.25)}}
+@media(max-width:700px){.carousel-heading{margin:45px 0 30px;gap:12px}.carousel-heading h2{font-size:42px}.carousel-controls{gap:8px}.carousel-controls button{width:44px;height:44px}.video-carousel{gap:16px;margin-right:-6.98%;padding-right:6.98%}.video-card{flex-basis:86%}.video-source a{font-size:14px}.video-source>span{font-size:11px}}

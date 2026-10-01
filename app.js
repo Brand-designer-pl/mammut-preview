@@ -20,3 +20,19 @@ document.querySelectorAll('.climb span').forEach((el,i)=>{el.classList.add('hero
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 document.addEventListener('focusin',event=>{let el=event.target;while(el&&el!==document.body){if(el.classList.contains('reveal'))el.classList.add('visible');el=el.parentElement}});
+
+// Keep touch scrolling native; arrows and keyboard move one complete card.
+const track=document.querySelector('.video-carousel');
+if(track){
+ const prev=document.querySelector('.carousel-prev'),next=document.querySelector('.carousel-next');
+ const videos=[...track.querySelectorAll('video')];
+ const update=()=>{prev.disabled=track.scrollLeft<2;next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-2};
+ const move=direction=>{const card=track.querySelector('.video-card');track.scrollBy({left:direction*(card.getBoundingClientRect().width+parseFloat(getComputedStyle(track).gap)),behavior:preference.matches||paused?'instant':'smooth'})};
+ prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
+ track.addEventListener('keydown',event=>{if(event.target!==track)return;if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();move(event.key==='ArrowLeft'?-1:1)}});
+ track.addEventListener('scroll',update,{passive:true});new ResizeObserver(update).observe(track);update();
+ videos.forEach(video=>video.addEventListener('play',()=>videos.forEach(other=>{if(other!==video)other.pause()})));
+ const visibility=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)entry.target.pause()}),{threshold:0});
+ videos.forEach(video=>visibility.observe(video));
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)videos.forEach(video=>video.pause())});
+}
