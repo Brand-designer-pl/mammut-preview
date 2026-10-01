@@ -191,3 +191,24 @@ footer>a:last-child{display:inline-flex;align-items:center;gap:8px}
 @media(max-width:700px){.brand img{width:145px}}
 
 footer .brand img{filter:brightness(0) invert(1)}
+
+/* Brand accents and scroll-linked logo ribbons (parallax 1.0.0, native JS). */
+.section:not(.closing) .label>span:first-child{color:#bf2423;font-weight:700}
+.section:not(.closing) .label{position:relative}
+.section:not(.closing) .label::before{content:"";position:absolute;top:-1px;left:0;width:64px;height:2px;background:var(--accent)}
+#story h2 span,#zalozenia h2 span,#kierunki h2 span,.brief-products h2 span{color:#cc3029}
+.brief-date{background:#e4342d0a;border-left-width:3px}
+.carousel-controls button:not(:disabled){border-color:var(--accent);color:#c82b24}
+.carousel-controls button:hover:not(:disabled){background:var(--accent);color:#fff}
+.video-source>span{color:#bc2925}
+.brand-band{position:relative;overflow:hidden;background:#f4f3f0;border-block:1px solid #e4342d26;padding:34px 0;isolation:isolate}
+.brand-band-track{position:relative;left:-270px;display:flex;align-items:center;gap:62px;width:max-content;will-change:transform}
+.brand-band img{width:235px;height:50px;object-fit:contain;display:block;flex-shrink:0}
+.brand-band img.brand-symbol{width:52px;height:52px}
+.brand-band-track>span{font-size:22px;font-weight:300;color:var(--accent);flex-shrink:0}
+.brand-band-red{background:var(--accent);border-color:var(--accent)}
+.brand-band-red img{filter:brightness(0) invert(1)}
+.brand-band-red .brand-band-track>span{color:#fff9}
+.motion-off .brand-band-track{transform:none!important;will-change:auto}
+@media(prefers-reduced-motion:reduce){.brand-band-track{transform:none!important;will-change:auto}}
+@media(max-width:700px){.brand-band{padding:26px 0}.brand-band-track{gap:35px}.brand-band img{width:175px;height:38px}.brand-band img.brand-symbol{width:40px;height:40px}}

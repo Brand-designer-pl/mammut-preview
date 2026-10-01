@@ -1,10 +1,12 @@
 document.documentElement.classList.add('js');
 const hero=document.querySelector('.hero'),far=document.querySelector('.far'),mid=document.querySelector('.middle'),front=document.querySelector('.front'),title=document.querySelector('.climb'),button=document.querySelector('.motion');
+const brandBands=[...document.querySelectorAll('.brand-band')];
 const detailImages=[...document.querySelectorAll('.feature-art img,.grip-art img')];
 const preference=matchMedia('(prefers-reduced-motion: reduce)');let queued=false,paused=false;
 function paint(){queued=false;const r=hero.getBoundingClientRect();// Keep parallax active for the full visible exit, without pinning the hero.
 const travel=Math.max(1,r.height);const p=preference.matches||paused?0:Math.max(0,Math.min(1,-r.top/travel));const mobile=innerWidth<701;far.style.transform=`translate3d(0,${p*travel*.22}px,0) scale(${1.04+p*.03})`;mid.style.transform=`translate3d(0,${-p*(mobile?95:160)}px,0)`;front.style.transform=`translate3d(0,${-p*(mobile?200:330)}px,0) scaleX(-1)`;title.style.transform=`translate3d(0,${p*travel*.65}px,0)`;
 const off=preference.matches||paused;
+brandBands.forEach(band=>{const box=band.getBoundingClientRect();const progress=Math.max(0,Math.min(1,(innerHeight-box.top)/(innerHeight+box.height)));band.firstElementChild.style.transform=`translate3d(${off?0:(progress-.5)*240*Number(band.dataset.direction)}px,0,0)`});
 detailImages.forEach(img=>{const box=img.closest('section').getBoundingClientRect();if(off){img.style.transform='none';return}if(box.bottom>0&&box.top<innerHeight){const progress=Math.max(0,Math.min(1,(innerHeight-box.top)/(innerHeight+box.height)));img.style.transform=`translate3d(0,${(progress-.5)*(mobile?12:24)}px,0) scale(${1.02+progress*(mobile?.06:.10)})`}});
 document.documentElement.style.setProperty('--reading-progress',`${Math.min(100,100*scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight))}%`);
 }
