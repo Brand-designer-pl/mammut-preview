@@ -215,3 +215,32 @@ footer .brand img{filter:brightness(0) invert(1)}
 
 /* Red hero claim, still layered behind the mountain foreground. */
 .climb{color:var(--accent);text-shadow:none}
+
+/* Safety First: supplementary brief, editorial hierarchy and three reel cards. */
+.safety-module{background:var(--paper)}
+.safety-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin:65px 0 40px}
+.safety-heading h2{font-size:clamp(60px,8vw,120px)}
+.safety-heading h2 span{color:var(--accent)}
+.safety-format{font-size:12px;letter-spacing:1px;line-height:1.8}
+.safety-format strong{font-size:20px;letter-spacing:0;font-weight:500}
+.safety-goal{max-width:900px;font-size:19px;border-left:3px solid var(--accent);padding:8px 0 8px 24px}
+.safety-goal strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#bc2925}
+.safety-block{margin-top:70px}
+.safety-block>h3{font-size:12px;text-transform:uppercase;letter-spacing:1.4px;padding:20px 0;border-top:1px solid var(--line);margin-bottom:35px;color:#bc2925}
+.safety-story{display:grid;grid-template-columns:1fr 1.1fr;gap:10%}
+.safety-module h4{font-size:clamp(26px,3vw,44px);line-height:1.17;letter-spacing:-1.2px;font-weight:500;margin:0 0 25px}
+.safety-story .body-copy{max-width:none;padding:0}.safety-module p{font-size:15px;line-height:1.85}
+.safety-guidelines{display:grid;grid-template-columns:1fr 1fr;gap:35px 8%;padding:0;list-style:none;counter-reset:guideline}
+.safety-guidelines li{counter-increment:guideline;border-bottom:1px solid var(--line);padding-bottom:18px}
+.safety-guidelines li::before{content:"0" counter(guideline);display:block;color:var(--accent);font-size:12px;margin-bottom:20px}
+.safety-guidelines h4{font-size:25px;letter-spacing:-.5px}
+.safety-reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.safety-reel{background:#f0f1ed;border-top:3px solid var(--accent);padding:30px;min-width:0}
+.safety-reel .eyebrow{color:#bc2925;display:block;min-height:32px}
+.safety-reel h4{font-size:29px;margin:20px 0 30px}
+.safety-reel h5{font-size:11px;letter-spacing:1px;text-transform:uppercase;margin:25px 0 10px}
+.safety-reel p,.safety-reel blockquote{font-size:14px;line-height:1.85}
+.safety-reel blockquote{margin:0;padding-top:18px;border-top:1px solid #cfd2c9}
+.safety-note{margin-top:40px;color:#666c63;max-width:1000px;font-size:13px!important}.safety-note a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1000px){.safety-reels{grid-template-columns:1fr}.safety-reel{padding:30px}.safety-reel .eyebrow{min-height:0}}
+@media(max-width:700px){.safety-heading{align-items:start;flex-direction:column;margin-top:40px;gap:12px}.safety-heading h2{font-size:64px}.safety-story,.safety-guidelines{grid-template-columns:1fr;gap:24px}.safety-block{margin-top:45px}.safety-goal{padding-left:18px}.safety-reel{padding:25px}.safety-reel p,.safety-reel blockquote{font-size:15px}}
