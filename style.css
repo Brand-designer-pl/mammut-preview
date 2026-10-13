@@ -244,3 +244,10 @@ footer .brand img{filter:brightness(0) invert(1)}
 .safety-note{margin-top:40px;color:#666c63;max-width:1000px;font-size:13px!important}.safety-note a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:1000px){.safety-reels{grid-template-columns:1fr}.safety-reel{padding:30px}.safety-reel .eyebrow{min-height:0}}
 @media(max-width:700px){.safety-heading{align-items:start;flex-direction:column;margin-top:40px;gap:12px}.safety-heading h2{font-size:64px}.safety-story,.safety-guidelines{grid-template-columns:1fr;gap:24px}.safety-block{margin-top:45px}.safety-goal{padding-left:18px}.safety-reel{padding:25px}.safety-reel p,.safety-reel blockquote{font-size:15px}}
+
+/* Campaign photos for the supplementary safety brief; preserve complete frames. */
+.safety-story-visual .safety-photo{max-width:380px;margin-top:35px}
+.safety-reel-photo{height:300px;display:flex;align-items:center;justify-content:center;background:#e9edf0;margin:0 0 25px}
+.safety-reel-photo img{width:100%;height:100%;object-fit:contain}
+@media(max-width:1000px) and (min-width:701px){.safety-reel-photo{height:420px}}
+@media(max-width:700px){.safety-story-visual .safety-photo{max-width:none;margin-top:25px}.safety-reel-photo{height:auto;background:transparent}.safety-reel-photo img{height:auto}}
